@@ -28,7 +28,11 @@ class Transfer
     if valid? && receiver.balance > amount && self.status == "complete" 
       sender.deposit(self.amount)
       receiver.withdrawal(self.amount)
-      self.status = ""
+      self.status = "reversed" 
+    else 
+      self.status = "rejected" 
+      "Transaction rejected. Please check your account balance."
+    
     
   
 end
