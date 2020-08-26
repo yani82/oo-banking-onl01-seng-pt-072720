@@ -1,5 +1,5 @@
 class Transfer
-  # your code here
+  
   attr_accessor :sender, :receiver, :amount, :status 
   
   def initialize(sender, receiver, amount, status="pending")
@@ -19,7 +19,7 @@ class Transfer
       receiver.deposit(self.amount) 
       self.status = "complete" 
     else 
-      self.stsatus = "rejected" 
+      self.status = "rejected" 
       "Transaction rejected. Please check your account balance."
     end 
   end 
